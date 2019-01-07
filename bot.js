@@ -736,7 +736,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     Script By : Relax ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`$help | Fenixo system`,"http://twitch.tv/DJ")
+client.user.setGame(`Fhelp | Fenixo system`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
