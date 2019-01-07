@@ -778,7 +778,7 @@ message.author.send(`
 ❧ Fnew ➺ لانشاء تذكرة
 ❧ سيرفر دعم https://discord.gg/5jZ7UbQ
 ❧ https://discordapp.com/api/oauth2/authorize?client_id=531499767604314114&permissions=8&scope=bot
-─════════════ {✯ By ♛ NovritschPro#6808 ✯} ════════════─
+─════════════ {✯ By !Relax#0002 ✯} ════════════─
 **
 `);
 }
