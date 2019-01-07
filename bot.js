@@ -776,6 +776,8 @@ message.author.send(`
 ❧ Fsay ➺ البوت يكرر كلام انته تحدده
 ❧ Fid ➺ لعرض معلوماتك
 ❧ Fnew ➺ لانشاء تذكرة
+❧ سيرفر دعم https://discord.gg/5jZ7UbQ
+❧ https://discordapp.com/api/oauth2/authorize?client_id=531499767604314114&permissions=8&scope=bot
 ─════════════ {✯ By ♛ NovritschPro#6808 ✯} ════════════─
 **
 `);
