@@ -450,7 +450,7 @@ const prefix = "F";
   .addField("User:",  `[ + ${user.tag} + ]`)
   .addField("By:", `[  + ${message.author.tag} +  ]`)
   .addField("Reason:", `[ + ${reason} +  ]`)
-  client.channels.get("492086928397565952").send({embed : banembed})
+  client.channels.get("531502410590584843").send({embed : banembed})
 }
 });
 
