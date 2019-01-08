@@ -82,7 +82,7 @@ client.on('message', function(message) {
 });
 
   client.on('message', message => {
-      if(message.content.startsWith ("$marry")) {
+      if(message.content.startsWith ("Fmarry")) {
       if(!message.channel.guild) return message.reply('** This command only for servers **')
       var proposed = message.mentions.members.first()
      
