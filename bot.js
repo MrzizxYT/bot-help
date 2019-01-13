@@ -733,17 +733,17 @@ client.on('ready', () => {
    console.log(`----------------`);
       console.log(`Script By : Fenixo system`);
         console.log(`----------------`);
-      console.log(`ON ${client.guilds.size} Servers '     Script By : Fhelp ' `);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : relax ' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Fhelp | DJ Dam System`,"http://twitch.tv/DJ")
+client.user.setGame(`Fhelp | Fenixo system`,"http://twitch.tv/DJ")
 client.user.setStatus("dnd")
 });
  
  
  
 client.on('message' , message => {
-if(message.content === '$help') {
+if(message.content === 'Fhelp') {
   var EsTeKnAN = new Discord.RichEmbed()
   .setColor('RANDOM')
 message.author.send(`
@@ -778,7 +778,7 @@ message.author.send(`
 ❧ Fnew ➺ لانشاء تذكرة
 ❧ سيرفر دعم https://discord.gg/5jZ7UbQ
 ❧ bot https://discordapp.com/api/oauth2/authorize?client_id=531499767604314114&permissions=8&scope=bot
-─════════════ {✯ By !Relax#0002 ✯} ════════════─
+─════════════ {✯ By !Relax#2019 ✯} ════════════─
 
 **
 `);
