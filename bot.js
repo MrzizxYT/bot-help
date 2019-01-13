@@ -113,7 +113,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 
 client.on('message', message => {
     var args = message.content.split(/[ ]+/)
-    if(message.content.includes('.com', '.net', '.tk')){
+    if(message.content.includes('https://discord.gg/')){
         message.delete()
     return message.reply(`**حبي ممنوع نشر اي روابط:joy: **`)
     }
