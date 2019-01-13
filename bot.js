@@ -110,6 +110,16 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
   }
 });
 
+
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('.com', '.net', '.tk')){
+        message.delete()
+    return message.reply(`**حبي ممنوع نشر اي روابط:joy: **`)
+    }
+});
+
+
 client.on('message',  (message) => {
         if(message.content.startsWith('Fkf')) {
   let user = message.mentions.users.first();
