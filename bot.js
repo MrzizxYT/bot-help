@@ -110,16 +110,6 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
   }
 });
 
-
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('https://discord.gg/')){
-        message.delete()
-    return message.reply(`**حبي ممنوع نشر اي روابط:joy: **`)
-    }
-});
-
-
 client.on('message', async message =>{
   if (message.author.id == client.user.id) return;
   if(JSON.stringify(user).indexOf(message.author.id) == -1) {
@@ -179,9 +169,6 @@ client.on('message', async message =>{
     }});
   }
 });
-
-
-
 
 client.on('message',  (message) => {
         if(message.content.startsWith('Fkf')) {
