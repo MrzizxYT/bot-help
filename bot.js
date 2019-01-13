@@ -120,6 +120,69 @@ client.on('message', message => {
 });
 
 
+client.on('message', async message =>{
+  if (message.author.id == client.user.id) return;
+  if(JSON.stringify(user).indexOf(message.author.id) == -1) {
+    user[message.author.id] = message.createdTimestamp;
+    return;
+  } else {
+    if (Date.now() - user[message.author.id] < 1000){
+      if (JSON.stringify(warn).indexOf(message.author.id) == -1) {
+        warn[message.author.id] = 1;
+      } else {
+        warn[message.author.id]++;
+      }
+      if (warn[message.author.id] < 3) {
+         message.channel.send({embed: {
+      title: "Muted a user:",
+      description: `<@${message.author.id}> please stop spamming, **${warn[message.author.id]}** warning!`,
+      color: 16000000
+    }});
+      }
+      delete user[message.author.id];
+    } else {
+      delete user[message.author.id];
+    }
+  }
+  if (warn[message.author.id] == 3) {
+     
+       let muterole = message.guild.roles.find(`name`, "muted");
+    //start of create role
+    if(!muterole){ 
+      try{
+        muterole = await message.guild.createRole({
+          name: "muted",
+          color: "#000000",
+          permissions:[]
+        }) 
+        message.guild.channels.forEach(async (channel, id) => {
+          await channel.overwritePermissions(muterole, {
+            SEND_MESSAGES: false,
+            ADD_REACTIONS: false
+          });
+        }); 
+      }catch(e){ 
+        console.log(e.stack);
+      } 
+    }
+    
+    message.guild.members.get(message.author.id).addRole(muterole);
+    var msg;
+        msg = parseInt();
+      
+      message.channel.fetchMessages({limit: msg}).then(messages => message.channel.bulkDelete(messages)).catch(console.error);
+    delete user[message.author.id];
+    message.channel.send({embed: {
+      title: "Muted a user:",
+      description: `<@${message.author.id}> was spamming and exceeded the spam warning!`,
+      color: 16000000
+    }});
+  }
+});
+
+
+
+
 client.on('message',  (message) => {
         if(message.content.startsWith('Fkf')) {
   let user = message.mentions.users.first();
