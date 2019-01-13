@@ -289,7 +289,7 @@ client.on('message', message =>{
     let args = message.content.split(' ');
     let prefix = 'F'; //تقدر تغير البرفكس
     
-    if(args[0] === `F{prefix}avatar`){
+    if(args[0] === `${prefix}avatar`){
         let mentions = message.mentions.members.first()
         if(!mentions) {
           let sicon = message.author.avatarURL
