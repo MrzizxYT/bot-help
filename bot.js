@@ -111,7 +111,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
 });
 
 client.on('message',  (message) => {
-        if(message.content.startsWith('Fkf')) {
+        if(message.content.startsWith('$kf')) {
   let user = message.mentions.users.first();
   if (!user) {
 
