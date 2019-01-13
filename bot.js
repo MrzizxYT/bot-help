@@ -107,8 +107,7 @@ message.channel.awaitMessages(filte, { max: 1, time: 15000, errors: ['time'] })
    message.channel.send(`  **${message.author} تم رفض عرضك** `);
 })
         
-  }
-});
+/////////////////////////////////////////////////////////////////////////////////
 
 var user = {};
 var warn = {};
@@ -173,6 +172,8 @@ client.on('message', async message =>{
   }
 });
 
+////////////////////////////////////////////////////////
+         
 client.on('message',  (message) => {
         if(message.content.startsWith('Fkf')) {
   let user = message.mentions.users.first();
