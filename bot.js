@@ -1403,4 +1403,24 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
     }
 });
 
+////////////////role
+client.on('message', message => {
+  if(message.content.startsWith(prefix + 'role')) {
+      if(!message.member.hasPermission('MANAGE_ROLES')) return
+    let role = new Discord.RichEmbed()
+  .setDescription(`
+  امثله على اعطاء رتبه : 
+  Frole @mention rolename : لأعطاء رتبة لعضو معين
+  Frole all rolename : لأعطاء رتبة للجميع 
+  Frole humans rolename : لأعطاء رتبة للاشخاص فقط
+  Frole bots rolename : لأعطاء رتبة لجميع البوتات
+  امثله على سحب رتبه
+  F-role @mention rolename : لسحب رتبة لعضو معين
+  F-role all rolename : لسحب رتبة للجميع 
+  F-role humans rolename : لسحب رتبة للاشخاص فقط
+  F-role bots rolename : لسحب رتبة لجميع البوتات`)
+  .setFooter('Requested by '+message.author.username, message.author.avatarURL)
+message.channel.sendEmbed(role)
+  }})
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
