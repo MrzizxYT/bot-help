@@ -813,6 +813,7 @@ if(message.author.bot) return;
  });
 
 client.on("message", message => {
+	var prefix = "F";
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
 	if( !message.guild ) return;
