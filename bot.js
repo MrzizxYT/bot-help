@@ -1405,7 +1405,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 
 ////////////////role
 client.on('message', message => {
-  if(message.content.startsWith(prefix + 'Frole')) {
+  if(message.content.startsWith(prefix + 'role')) {
       if(!message.member.hasPermission('MANAGE_ROLES')) return
     let role = new Discord.RichEmbed()
   .setDescription(`
