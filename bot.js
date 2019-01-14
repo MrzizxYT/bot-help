@@ -1405,6 +1405,9 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 
 /////////////////////////////////////////////////
 
+var user = {};
+var warn = {};
+
 client.on('message', async message =>{
   if (message.author.id == client.user.id) return;
   if(JSON.stringify(user).indexOf(message.author.id) == -1) {
