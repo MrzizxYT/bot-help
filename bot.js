@@ -849,15 +849,6 @@ client.on('message', function(msg) {
   }, 1000);
 });
 
-
-
-
-
-
-
-
-
-
 client.on('roleCreate', role => {
   client.setTimeout(() => {
     role.guild.fetchAuditLogs({
@@ -889,7 +880,6 @@ client.on('roleCreate', role => {
   }, 1000)
 })
 
-
 client.on('roleDelete', role => {
  
     if(!role.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
@@ -913,6 +903,7 @@ client.on('roleDelete', role => {
         logChannel.send(roleDelete);
     })
 });
+
 client.on('roleUpdate', (oldRole, newRole) => {
  
     if(!oldRole.guild.member(client.user).hasPermission('EMBED_LINKS')) return;
@@ -991,6 +982,7 @@ client.on('messageDelete', message => {
  
     logChannel.send(messageDelete);
 });
+
 client.on('messageUpdate', (oldMessage, newMessage) => {
  
     if(oldMessage.author.bot) return;
@@ -1013,26 +1005,6 @@ client.on('messageUpdate', (oldMessage, newMessage) => {
  
     logChannel.send(messageUpdate);
 });
- 
- 
-// Roles Logs
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-  
-
-
 
 client.on('channelCreate', channel => {
  
@@ -1430,5 +1402,5 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
         logChannel.send(voiceLeave);
     }
 });
-client.login(process.env.BOT_TOKEN);
+
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
