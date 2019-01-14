@@ -800,5 +800,15 @@ client.on('message', message => {
     }
 });
 
- 
+client.on("message", message => {
+if(message.author.bot) return;
+      if (message.content === "!ping") {
+      message.react("??") 
+      const embed = new Discord.RichEmbed()
+  .setColor("#00ff47")
+  .addField('**سرعة استجابة البوت:**' , `${Date.now() - message.createdTimestamp}` + ' ms')
+  message.channel.sendEmbed(embed);
+    }
+
+ });
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
