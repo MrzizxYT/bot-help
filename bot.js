@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-var prefix = "F";
+const prefix = "F"
 client.on('message', message => { // Leaked by [ @Out Our server ]
    if(!message.channel.guild) return;
 if(message.content.startsWith(prefix + 'bc')) {
