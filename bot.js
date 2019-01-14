@@ -859,6 +859,7 @@ client.on("message", message => {
 		} 
 	} 
 });
+
 var AsciiTable = require('ascii-data-table').default
 client.on('message', message =>{
 
@@ -876,5 +877,4 @@ client.on('message', message =>{
         message.channel.send(`**\`\`\`xl\n${res}\`\`\`**`);
     }
 });
-
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
