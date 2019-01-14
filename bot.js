@@ -800,7 +800,7 @@ client.on('message', message => {
     }
 });
 client.on('message', function(msg) {
-         var prefix = "$"
+         var prefix = "F"
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
       .setColor('RANDOM')
