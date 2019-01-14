@@ -1423,7 +1423,7 @@ client.on('message', message => {
 message.channel.sendEmbed(role)
   }})
 
-lient.on("message", message => {
+client.on("message", message => {
 	var args = message.content.split(' ').slice(1); 
 	var msg = message.content.toLowerCase();
 	if( !message.guild ) return;
