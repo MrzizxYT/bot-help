@@ -1469,7 +1469,7 @@ client.on('message', async message =>{
 });
 
 const sWlc = {}
-const premium = ['489342754887827487', '', '', '']
+const premium = ['332713449215754242', '', '', '']
 client.on('message', message => {
 var prefix = "F";
 if(message.channel.type === "dm") return;
