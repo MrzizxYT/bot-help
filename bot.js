@@ -1486,18 +1486,5 @@ const channel = sWlc[message.guild.id].channel
     message.channel.send(`**${message.guild.name}'s channel has been changed to ${newChannel}**`);
   }
 });
-client.on('guildMemberAdd', member => {
-    var embed = new Discord.RichEmbed()
-    .setThumbnail(member.user.avatarURL)
-  .addField("**:rose: THANKS FOR JOINING OUR SERVER:rose: :" ,member.user.username )
-    .setDescription(':heart: HOPE YOU ENJOY SERVER SERVER:heart: : *')
-    .setColor('RANDOM')
-    .setImage('https://cdn.pg.sa/OD53Wjr9p0.gif%27)
-var channel =member.guild.channels.find('name', '【welcome】')
-if (!channel) return;
-channel.send({embed : embed});
-});
-
-
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
