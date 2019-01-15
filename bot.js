@@ -1468,8 +1468,10 @@ client.on('message', async message =>{
   }
 });
 
- client.on('guildMemberAdd', member => {
-let channel = member.guild.channels.get("welcome");
+client.on("guildMemberAdd", member => {
+      if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
+    channel: "welcome"
+  }
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
