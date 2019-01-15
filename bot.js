@@ -1469,7 +1469,7 @@ client.on('message', async message =>{
 });
 
  client.on('guildMemberAdd', member => {
-let channel = member.guild.channels.get("528306102815948820");
+let channel = member.guild.channels.get("welcome");
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
