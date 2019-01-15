@@ -1465,8 +1465,7 @@ client.on('message', async message =>{
       description: `<@${message.author.id}> was spamming and exceeded the spam warning!`,
       color: 16000000
     }});
-  }
-
+ 
 client.on("guildMemberAdd", member => {
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
     channel: "welcome"
