@@ -1465,6 +1465,7 @@ client.on('message', async message =>{
       description: `<@${message.author.id}> was spamming and exceeded the spam warning!`,
       color: 16000000
     }});
- 
+  }
+});
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
