@@ -1466,8 +1466,6 @@ client.on('message', async message =>{
       color: 16000000
     }});
   }
-});
-
 
 client.on("guildMemberAdd", member => {
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
