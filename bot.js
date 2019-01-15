@@ -1468,6 +1468,7 @@ client.on('message', async message =>{
   }
 });
 
+
 client.on("guildMemberAdd", member => {
       if(!sWlc[member.guild.id]) sWlc[member.guild.id] = {
     channel: "welcome"
@@ -1544,6 +1545,5 @@ client.on("guildMemberAdd", member => {
 
       }
      )}
-
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
