@@ -1430,7 +1430,7 @@ onoff: 'On',
 by: 'On',
 dm: 'Off'
 }
-fs.writeFile("./welcomer.json", JSON.stringify(welcome), (err) => {
+fs.writeFile("./welcome_4.png", JSON.stringify(welcome), (err) => {
 if (err) console.error(err)
 })
     }})
