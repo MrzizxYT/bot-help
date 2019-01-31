@@ -1405,6 +1405,95 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 
 /////////////////////////////////////////////////
 
+const welcome = JSON.parse(fs.readFileSync('./welcomer.json' , 'utf8'));
+ 
+client.on('message', message => {
+           if (!message.channel.guild) return;
+ 
+    let room = message.content.split(" ").slice(1);
+    let findroom = message.guild.channels.find('name', `${room}`)
+    if(message.content.startsWith(prefix + "setwel")) {
+        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('انت لاتمتلك صلاحيات' );
+if(!room) return message.channel.send('يرجى كتابة اسم الشات')
+if(!findroom) return message.channel.send('لايمكنني ايجاد هذا الشات')
+let embed = new Discord.RichEmbed()
+.setTitle('تم انشاء شات الترحيب')
+.addField('الشات:', `${room}`)
+.addField('الفاعل:', `${message.author}`)
+.setThumbnail(message.author.avatarURL)
+.setFooter(`${client.user.username}`)
+message.channel.sendEmbed(embed)
+welcome[message.guild.id] = {
+channel: room,
+onoff: 'On',
+by: 'On',
+dm: 'Off'
+}
+fs.writeFile("./welcomer.json", JSON.stringify(welcome), (err) => {
+if (err) console.error(err)
+})
+    }})
+client.on('message', message => {
+ 
+    if(message.content.startsWith(prefix + "actwel")) {
+        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('انت لاتمتلك الصلاحيات`' );
+        if(!welcome[message.guild.id]) welcome[message.guild.id] = {
+          onoff: 'Off'
+        }
+          if(welcome[message.guild.id].onff === 'Off') return [message.channel.send(`تم تفعيل الترحيب`), welcome[message.guild.id].onoff = 'On']
+          if(welcome[message.guild.id].onoff === 'On') return [message.channel.send(`تم تعطيل الترحيب`), welcome[message.guild.id].onoff = 'Off']
+          fs.writeFile("./welcome.json", JSON.stringify(welcome), (err) => {
+            if (err) console.error(err)
+            .catch(err => {
+              console.error(err);
+          });
+            })
+          }
+         
+        })
+       
+        client.on('message', message => {
+ 
+    if(message.content.startsWith(prefix + "actdmwel")) {
+        if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
+        if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('لاتمتلك صلاحية منج سيرفر' );
+        if(!welcome[message.guild.id]) welcome[message.guild.id] = {
+          dm: 'Off'
+        }
+          if(welcome[message.guild.id].dm === 'Off') return [message.channel.send(`تم تفعيل الترحيب في الخاص`), welcome[message.guild.id].dm = 'On']
+          if(welcome[message.guild.id].dm === 'On') return [message.channel.send(`تم تعطيل الترحيب في الخاص`), welcome[message.guild.id].dm = 'Off']
+          fs.writeFile("./welcome.json", JSON.stringify(welcome), (err) => {
+            if (err) console.error(err)
+            .catch(err => {
+              console.error(err);
+          });
+            })
+          }
+         
+        })
+ 
+        client.on('message', message => {
+ 
+            if(message.content.startsWith(prefix + "actby")) {
+                if(!message.channel.guild) return message.reply('**This Command Only For Servers**');
+                if(!message.member.hasPermission('MANAGE_GUILD')) return message.channel.send('انت لاتمتلك صلاحية منج سيرفر' );
+                if(!welcome[message.guild.id]) welcome[message.guild.id] = {
+                  by: 'Off'
+                }
+                  if(welcome[message.guild.id].by === 'Off') return [message.channel.send(`تم تفعيل اظهار الداعي`), welcome[message.guild.id].by = 'On']
+                  if(welcome[message.guild.id].by === 'On') return [message.channel.send(`تم تعطيل اظهار الداعي`), welcome[message.guild.id].by = 'Off']
+                  fs.writeFile("./welcome.json", JSON.stringify(welcome), (err) => {
+                    if (err) console.error(err)
+                    .catch(err => {
+                      console.error(err);
+                  });
+                    })
+                  }
+                 
+                })
+
 
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
