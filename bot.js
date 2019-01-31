@@ -1404,7 +1404,7 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 });
 
 /////////////////////////////////////////////////
-const prefix = "F"
+
 client.on('message', message => {
  
     if(message.content.startsWith(prefix + "actwel")) {
