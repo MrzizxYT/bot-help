@@ -1405,7 +1405,11 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 
 /////////////////////////////////////////////////
 
-lient.on('guildMemberAdd', member => {
+var dat = JSON.parse("{}");
+function forEachObject(obj, func) {
+    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
+}
+client.on('guildMemberAdd', member => {
 let channel = member.guild.channels.get("528306102815948820");
 if (member.user.bot) return;
 var Canvas = require('canvas')
