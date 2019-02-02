@@ -14,7 +14,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `)
     console.log(`[Codes] ${client.users.size}`)
-    client.user.setStatus("Fplay I Fenixo system")
+    client.user.setStatus("dnd")
  client.user.setGame(`☆`,`https://www.twitch.tv/skwadraa`);
 });
  
