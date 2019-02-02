@@ -1406,7 +1406,6 @@ client.on('voiceStateUpdate', (voiceOld, voiceNew) => {
 /////////////////////////////////////////////////
 
 client.on('message' , async (message) => {
-var prefix = "F"
     if(message.content.startsWith(prefix + "topinv")) {
 if(message.author.bot) return;
 if(!message.channel.guild) return message.reply(' Error : \` Guild Command \`');
