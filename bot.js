@@ -1424,20 +1424,18 @@ client.on('message', message => {
 });
 
 
-const google = require('google-it');
 client.on('message', message => {
- let args = message.content.split(' ').slice(1);
-    if(message.content.startsWith(prefix + 'google')) {
-    const input = args.join(' ');
-
-google({ query: input, disableConsole: true }).then(results => {
-    return message.channel.send(`\n\n**Title**: ${results[0].title}\n***Link***: ${results[0].link}\nDescription: ${results[0].snippet}`);
-}).catch(error => {
-    if (error) throw error;
+    if(message.content === "$bot") {
+        const embed = new Discord.RichEmbed()
+        .setColor("#00FFFF")
+  .addField('**الذاكرة المستخدمة 💾**', `${(process.memoryUsage().rss / 1000000).toFixed()}MB`, true)
+         .addField('**سرعة الاتصال📡**' , `${Date.now() - message.createdTimestamp}` + ' ms')
+        .addField('**استخدام المعالج💿**', `${(process.cpuUsage().rss / 10000).toFixed()}%`, true)
+        .addField('**🌐 عدد السيرفرات**' , `${client.guilds.size}`, true)
+        .addField('**عدد المستخدمين 👥 **' , `${client.users.size}`, true)
+               message.channel.sendEmbed(embed);
+           }
 });
-
-}})
-
 
 
 
