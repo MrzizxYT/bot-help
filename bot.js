@@ -1414,7 +1414,6 @@ client.on('guildCreate', guild => {
 client.on('guildCreate', guild => {
    
     client.users.get("332713449215754242")
-      const  = new Discord.RichEmbed()
       .setAuthor(`بوتك دخل سيرفر جديد مبروك ✅`)
       .setDescription(`**
     Server name: __${guild.name}__
@@ -1430,8 +1429,6 @@ client.on('guildCreate', guild => {
   client.on('guildDelete', guild => {
      
     client.users.get("332713449215754242")
-  
-    const  = new Discord.RichEmbed()
     .setAuthor(`Fenixo system. left a server ❎`)
     .setDescription(`**
    Server name: __${guild.name}__
