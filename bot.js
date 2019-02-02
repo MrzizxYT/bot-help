@@ -1424,6 +1424,21 @@ client.on('message', message => {
 });
 
 
+const google = require('google-it');
+client.on('message', message => {
+ let args = message.content.split(' ').slice(1);
+    if(message.content.startsWith(prefix + 'google')) {
+    const input = args.join(' ');
+
+google({ query: input, disableConsole: true }).then(results => {
+    return message.channel.send(`\n\n**Title**: ${results[0].title}\n***Link***: ${results[0].link}\nDescription: ${results[0].snippet}`);
+}).catch(error => {
+    if (error) throw error;
+});
+
+}})
+
+
 
 
 
