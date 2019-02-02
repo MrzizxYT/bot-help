@@ -1413,7 +1413,7 @@ client.on('guildCreate', guild => {
   });
 client.on('guildCreate', guild => {
    
-    client.users.get("ايدي حقك")
+    client.users.get("332713449215754242")
       const Dark&Narox = new Discord.RichEmbed()
       .setAuthor(`بوتك دخل سيرفر جديد مبروك ✅`)
       .setDescription(`**
@@ -1439,8 +1439,8 @@ client.on('guildCreate', guild => {
    Server owner: __${guild.owner}__
    Members Count: __${guild.memberCount}__
    Servers Counter : __${client.guilds.size}__**`)
-           .setColor('#36393e')
-           .setFooter('Narox' , client.user.avatarURL)
+           .setColor('##2019e')
+           .setFooter('!Relax' , client.user.avatarURL)
            client.users.get("332713449215754242").send({Dark&Narox});
    
   });
